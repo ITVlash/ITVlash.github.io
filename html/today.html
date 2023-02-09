@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Погода на сегодня</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="https://kit.fontawesome.com/d17b7d1cb2.js" crossorigin="anonymous"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div class="preloader">
+  		<div class="loader">
+            <span class="element element-1"></span>
+            <span class="element element-2"></span>
+            <span class="load">Загрузка...</span>
+            <span class="element element-3"></span>
+            <span class="element element-4"></span>
+        </div>
+	</div>
+	<script>
+		  window.onload = function () {
+		    document.body.classList.add('loaded_hiding');
+		    window.setTimeout(function () {
+		      document.body.classList.add('loaded');
+		      document.body.classList.remove('loaded_hiding');
+		    }, 500);
+		  }
+	</script>
+	
+	<header>
+		<div class="logo">
+			<span>пог</span>
+			<i class="fa-solid fa-sun"></i>
+			<span>да</span>
+			<a href="#"></a>
+		</div>
+        <nav>
+        	<button>Период</button>
+        	<div>
+        		<a href="../index.html">Сейчас</a>
+            	<a href="today.html">Сегодня</a>
+            	<a href="tomorrow.html">Завтра</a>
+            	<a href="week.html">Неделя</a>
+            	<a href="two-weeks.html">2 недели</a>
+            	<a href="month.html">Месяц</a>
+        	</div>
+        </nav>
+	</header>
+	<div class="main">
+		<section class="weather-tomorrow">
+			<div class="block">
+				<div class="location">Москва</div>
+				<div class="date">Вторник, 28 декабря</div>
+				<div class="periods">
+					<div class="period night">
+						<div class="per">Ночь</div>
+						<div class="temp-info">
+							<div class="wea-status"><i class="fa-solid fa-moon"></i></div>
+							<div class="wea-temp"><span>-6°</span></div>
+						</div>
+						<div class="add-info1" id="add-info1">
+							<div class="feeling">
+								<i class="fa-solid fa-temperature-three-quarters"></i>
+								Ощущение
+								<span class="wea-temp">-9°</span>
+							</div>
+							<div class="wind">
+								<i class="fa-solid fa-wind"></i>
+								<span id="wind-speed">1 м/c, C</span>
+							</div>
+						</div>
+					</div>
+					<div class="period morning">
+						<div class="per">Утро</div>
+						<div class="temp-info">
+							<div class="wea-status"><i class="fa-solid fa-snowflake"></i></div>
+							<div class="wea-temp"><span>-2°</span></div>
+						</div>
+						<div class="add-info2" id="add-info2">
+							<div class="feeling">
+								<i class="fa-solid fa-temperature-three-quarters"></i>
+								Ощущение
+								<span class="wea-temp">-4°</span>
+							</div>
+							<div class="wind">
+								<i class="fa-solid fa-wind"></i>
+								<span id="wind-speed">2 м/c, З</span>
+							</div>
+						</div>
+					</div>
+					<div class="period day">
+						<div class="per">День</div>
+						<div class="temp-info">
+							<div class="wea-status"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+							<div class="wea-temp"><span>+2°</span></div>
+						</div>
+						<div class="add-info3" id="add-info3">
+							<div class="feeling">
+								<i class="fa-solid fa-temperature-three-quarters"></i>
+								Ощущение
+								<span class="wea-temp">-1°</span>
+							</div>
+							<div class="wind">
+								<i class="fa-solid fa-wind"></i>
+								<span id="wind-speed">3 м/c, СЗ</span>
+							</div>
+						</div>
+					</div>
+					<div class="period evening">
+						<div class="per">Вечер</div>
+						<div class="temp-info">
+							<div class="wea-status"><i class="fa-solid fa-cloud"></i></div>
+							<div class="wea-temp"><span>0°</span></div>
+						</div>
+						<div class="add-info4" id="add-info4">
+							<div class="feeling">
+								<i class="fa-solid fa-temperature-three-quarters"></i>
+								Ощущение
+								<span class="wea-temp">-2°</span>
+							</div>
+							<div class="wind">
+								<i class="fa-solid fa-wind"></i>
+								<span id="wind-speed">4,2 м/c, З</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button id="down" class="bottom down">&#9660;</button>
+				<button id="up" class="bottom up hide">&#9650;</button>
+				<div class="add-info hide" id="add-info">
+					<div class="humdity">
+						<i class="fa-solid fa-droplet"></i>
+						<span id="humidity-percent">95</span>%
+					</div>
+					<div class="pressure">
+						<i class="fa-solid fa-gauge"></i>
+						<span id="pressure-mrs">748</span>
+						 мм рт. ст.
+					</div>
+					<div class="sunrise">
+						Восход солнца:
+						<span id="sunrise-time">9:00</span>
+					</div>
+					<div class="sunset">
+						Заход солнца:
+						<span id="sunset-time">16:00</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<aside class="cities">
+			<h2>Выберите город:</h2>
+			<ul>
+				<li><a href="#" class="city">Москва</a></li>
+				<li><a href="#" class="city">Санкт-Петербург</a></li>
+				<li><a href="#" class="city">Новосибирск</a></li>
+				<li><a href="#" class="city">Екатеринбург</a></li>
+				<li><a href="#" class="city">Казань</a></li>
+				<li><a href="#" class="city">Нижний Новгород</a></li>
+				<li><a href="#" class="city">Челябинск</a></li>
+				<li><a href="#" class="city">Красноярск</a></li>
+				<li><a href="#" class="city">Самара</a></li>
+				<li><a href="#" class="city">Уфа</a></li>
+			</ul>
+		</aside>
+	</div>
+	<footer>
+		<div class="footer-links">
+			<a href="#">Соглашение</a>
+			<a href="#">Оставить отзыв</a>
+		</div>
+		<span class="rights">© WEATHER MIREA. Все права защищены</span>
+	</footer>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
